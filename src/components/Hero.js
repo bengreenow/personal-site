@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Hero = styled.div`
     margin: 0;
@@ -20,7 +20,7 @@ export const Footer = styled(Hero)`
 `;
 
 export const HeaderHero = styled.div`
-    background: linear-gradient(126.95deg, #000000 0%, #f9ffb1 100%),
+    background: linear-gradient(126.95deg, #bbb 0%, #f9ffb1 100%),
         radial-gradient(91.23% 100% at 50% 100%, #be002e 0%, #6100ff 100%),
         linear-gradient(307.27deg, #1dac92 0.37%, #2800c6 100%),
         radial-gradient(
