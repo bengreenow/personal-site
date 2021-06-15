@@ -12,14 +12,11 @@ const IndexPage = () => {
         <div>
             <header style={{ margin: 0 }}>
                 <div style={{ display: "grid" }}>
-                    <StaticImage
+                    <div
                         style={{
                             gridArea: "1/1",
                             height: "100vh",
                         }}
-                        layout="fullWidth"
-                        alt=""
-                        src={"../images/gradient.webp"}
                     />
                     <div
                         style={{
@@ -28,11 +25,12 @@ const IndexPage = () => {
                             placeItems: "center",
                             display: "grid",
                         }}
+                        className="hero"
                     >
                         <div
                             style={{
                                 paddingLeft: "10px",
-                                paddingRight: "10px;",
+                                paddingRight: "10px",
                                 maxWidth: "1140px",
                                 // width: "100%",
                             }}

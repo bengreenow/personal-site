@@ -18,3 +18,8 @@ html,body
     transform: translateY(0px);
   }
 }
+
+.hero{
+    background: linear-gradient(126.95deg, #000000 0%, #F9FFB1 100%), radial-gradient(91.23% 100% at 50% 100%, #BE002E 0%, #6100FF 100%), linear-gradient(307.27deg, #1DAC92 0.37%, #2800C6 100%), radial-gradient(100% 140% at 100% 0%, #EAFF6B 0%, #006C7A 57.29%, #2200AA 100%);
+background-blend-mode: overlay, difference, difference, normal;
+}
