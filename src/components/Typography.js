@@ -46,16 +46,17 @@ export const Heading1 = styled(Title)`
     font-size: 5rem;
     color: black;
     animation: none;
-    &:before {
+    &:after {
         content: "";
-        position: absolute;
-        height: 20px;
-        left: 2px;
+        position: relative;
+        display: block;
+        height: 4px;
+        left: 40px;
         right: 0px;
-        width: 50%;
-
+        bottom: 10px;
+        width: 100%;
+        z-index: -1;
         background-color: #73e3ff;
-        background-image: linear-gradient(19deg, #73e3ff 0%, #b721ff 100%);
-        bottom: -2px;
+        background-image: linear-gradient(19deg, #e8711d 0%, #cc1c7e 100%);
     }
 `;
