@@ -1,10 +1,36 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+    faInstagram,
+    faLinkedin,
+    faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 import * as React from "react";
 import { Heading1, Subtitle, Title } from "../components/Typography";
 import { StaticImage } from "gatsby-plugin-image";
 import { keyframes } from "styled-components";
-import { Hero } from "../components/Hero";
+import { Footer, HeaderHero, Hero, Wrapper } from "../components/Hero";
+import SocialIcons from "../components/SocialIcons";
+// data
+
+const socials = [
+    {
+        icon: faInstagram,
+        link: "https://www.instagram.com/bengreenow",
+    },
+    {
+        icon: faLinkedin,
+        link: "https://www.linkedin.com/in/ben-greenow-3b004a180/",
+    },
+    {
+        icon: faEnvelope,
+        link: "mailto:benjamin.greenow@gmail.com?subject=Hello There!",
+    },
+    {
+        icon: faGithub,
+        link: "https://github.com/bengreenow",
+    },
+];
 
 // markup
 const IndexPage = () => {
@@ -18,14 +44,13 @@ const IndexPage = () => {
                             height: "100vh",
                         }}
                     />
-                    <div
+                    <HeaderHero
                         style={{
                             gridArea: "1/1",
                             position: "relative",
                             placeItems: "center",
                             display: "grid",
                         }}
-                        className="hero"
                     >
                         <div
                             style={{
@@ -38,7 +63,7 @@ const IndexPage = () => {
                             <Title>Ben Greenow</Title>
                             <Subtitle>web developer</Subtitle>
                             {/* // TODO add onclick scroll down */}
-                            {/* <FontAwesomeIcon
+                            <FontAwesomeIcon
                                 icon={faChevronDown}
                                 size="3x"
                                 style={{
@@ -51,24 +76,20 @@ const IndexPage = () => {
                                     animationDelay: "0.7s",
                                     animationFillMode: "backwards",
                                 }}
-                            /> */}
+                            />
                         </div>
-                    </div>
+                    </HeaderHero>
                 </div>
             </header>
-            <main
-                style={{
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    maxWidth: "900px",
-                    paddingLeft: "10px",
-                    paddingRight: "10px;",
-                }}
-            >
-                {/* <Hero>
-                    <Heading1>Projects</Heading1>
-                </Hero> */}
-            </main>
+            <Wrapper>
+                <Hero>{/* <Heading1>Projects</Heading1> */}</Hero>
+            </Wrapper>
+
+            <Footer>
+                <Wrapper>
+                    <SocialIcons socials={socials}></SocialIcons>
+                </Wrapper>
+            </Footer>
         </div>
     );
 };
