@@ -29,9 +29,14 @@ export const HeaderHero = styled.div`
             #006c7a 57.29%,
             #2200aa 100%
         );
-
-    padding-left: "10px";
-    padding-right: "10px";
-    max-width: "1140px";
+    }
     background-blend-mode: overlay, difference, difference, normal;
+`;
+
+export const Wrapper = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    padding-left: 10px;
+    padding-right: 10px;
 `;

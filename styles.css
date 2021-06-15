@@ -20,3 +20,21 @@ html,body
 }
 
 
+.social-icon{
+  transition: opacity 0.3s linear;
+  transition: transform 0.5s ease-out;
+  opacity: 70%;
+  font-size: 2em;
+
+}
+
+@media only screen and (max-width: 320px) {
+  .social-icon {
+    font-size: 3em;
+  }
+}
+
+.social-icon:hover{
+  opacity: 100%;
+  transform: scale(1.3)
+}

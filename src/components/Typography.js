@@ -60,3 +60,14 @@ export const Heading1 = styled(Title)`
         background-image: linear-gradient(19deg, #e8711d 0%, #cc1c7e 100%);
     }
 `;
+
+export const SocialListItem = styled.li`
+    display: inline-block;
+    margin: 4px;
+`;
+
+export const SocialList = styled.ul`
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+`;

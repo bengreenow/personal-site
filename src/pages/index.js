@@ -9,7 +9,8 @@ import * as React from "react";
 import { Heading1, Subtitle, Title } from "../components/Typography";
 import { StaticImage } from "gatsby-plugin-image";
 import { keyframes } from "styled-components";
-import { Footer, HeaderHero, Hero } from "../components/Hero";
+import { Footer, HeaderHero, Hero, Wrapper } from "../components/Hero";
+import SocialIcons from "../components/SocialIcons";
 // data
 
 const socials = [
@@ -80,24 +81,14 @@ const IndexPage = () => {
                     </HeaderHero>
                 </div>
             </header>
-            <main
-                style={{
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    maxWidth: "900px",
-                    paddingLeft: "10px",
-                    paddingRight: "10px",
-                }}
-            >
-                <Hero>
-                    <Heading1>Projects</Heading1>
-                </Hero>
-            </main>
+            <Wrapper>
+                <Hero>{/* <Heading1>Projects</Heading1> */}</Hero>
+            </Wrapper>
 
             <Footer>
-                {socials.map((social) => {
-                    return <FontAwesomeIcon icon={social.icon} size="2x" />;
-                })}
+                <Wrapper>
+                    <SocialIcons socials={socials}></SocialIcons>
+                </Wrapper>
             </Footer>
         </div>
     );
