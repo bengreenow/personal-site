@@ -12,6 +12,7 @@ const fadeUp = keyframes`
 }`;
 
 export const Title = styled.h1`
+    display: inline-block;
     font-family: "Questrial", sans-serif;
     font-size: 10em;
     font-weight: 100;
@@ -44,14 +45,17 @@ export const Subtitle = styled.h2`
 export const Heading1 = styled(Title)`
     font-size: 5rem;
     color: black;
-    &:after {
+    animation: none;
+    &:before {
         content: "";
         position: absolute;
-        height: 2px;
+        height: 20px;
         left: 2px;
-        right: 0;
-        width: 100%;
-        background: ba;
+        right: 0px;
+        width: 50%;
+
+        background-color: #73e3ff;
+        background-image: linear-gradient(19deg, #73e3ff 0%, #b721ff 100%);
         bottom: -2px;
     }
 `;

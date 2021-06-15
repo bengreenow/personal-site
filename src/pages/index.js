@@ -37,8 +37,8 @@ const IndexPage = () => {
                         >
                             <Title>Ben Greenow</Title>
                             <Subtitle>web developer</Subtitle>
-
-                            <FontAwesomeIcon
+                            {/* // TODO add onclick scroll down */}
+                            {/* <FontAwesomeIcon
                                 icon={faChevronDown}
                                 size="3x"
                                 style={{
@@ -51,7 +51,7 @@ const IndexPage = () => {
                                     animationDelay: "0.7s",
                                     animationFillMode: "backwards",
                                 }}
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>
@@ -65,9 +65,9 @@ const IndexPage = () => {
                     paddingRight: "10px;",
                 }}
             >
-                <Hero>
+                {/* <Hero>
                     <Heading1>Projects</Heading1>
-                </Hero>
+                </Hero> */}
             </main>
         </div>
     );
