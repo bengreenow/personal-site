@@ -18,7 +18,6 @@ export const Title = styled.h1`
     font-weight: 100;
     color: white;
     margin: 0;
-    font-family: $display-font-family;
     animation-name: ${fadeUp};
     animation-duration: 1s;
     animation-timing-function: ease-out;
