@@ -11,7 +11,7 @@ import { Footer, HeaderHero, Hero, Wrapper } from "../components/Hero";
 import SocialIcons from "../components/SocialIcons";
 import ProjectCard from "../components/ProjectCard";
 import { StaticImage } from "gatsby-plugin-image";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 // data
 
 const socials = [
