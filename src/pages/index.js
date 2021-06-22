@@ -6,11 +6,12 @@ import {
     faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import * as React from "react";
-import { Heading1, Subtitle, Title } from "../components/Typography";
-import { StaticImage } from "gatsby-plugin-image";
-import { keyframes } from "styled-components";
+import { Heading1, Heading2, Subtitle, Title } from "../components/Typography";
 import { Footer, HeaderHero, Hero, Wrapper } from "../components/Hero";
 import SocialIcons from "../components/SocialIcons";
+import ProjectCard from "../components/ProjectCard";
+import { StaticImage } from "gatsby-plugin-image";
+import { Button } from "../components/Button";
 // data
 
 const socials = [
@@ -82,7 +83,40 @@ const IndexPage = () => {
                 </div>
             </header>
             <Wrapper>
-                <Hero>{/* <Heading1>Projects</Heading1> */}</Hero>
+                <Hero>
+                    <Heading1>Projects</Heading1>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            flexWrap: "wrap",
+                            flexBasis: "15em",
+                        }}
+                    >
+                        {[
+                            "p1",
+                            "p2",
+                            "p3",
+                            "p4",
+                            "p5",
+                            "p6",
+                            "p7",
+                            "p8",
+                            "p9",
+                        ].map((name) => {
+                            return (
+                                <ProjectCard
+                                    title={name}
+                                    imageComponent={<StaticImage src="" />}
+                                    key={name}
+                                >
+                                    Hello World
+                                </ProjectCard>
+                            );
+                        })}
+                    </div>
+                    <Button></Button>
+                </Hero>
             </Wrapper>
 
             <Footer>

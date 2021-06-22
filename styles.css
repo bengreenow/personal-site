@@ -22,9 +22,10 @@ html,body
 
 .social-icon{
   transition: opacity 0.3s linear;
-  transition: transform 0.5s ease-out;
+  transition: transform 0.2s ease-in-out;
   opacity: 70%;
   font-size: 2em;
+
 
 }
 
@@ -36,5 +37,11 @@ html,body
 
 .social-icon:hover{
   opacity: 100%;
-  transform: scale(1.3)
+  transform: scale(1.1) rotate(-10deg)
+}
+
+p{
+  font-family: "Old Standard TT", serif;
+  color: #666;
+  font-size: 1.1rem;
 }

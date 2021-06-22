@@ -71,3 +71,9 @@ export const SocialList = styled.ul`
     margin: 0;
     padding: 0;
 `;
+
+export const Heading2 = styled(Title)`
+    font-size: 2.4rem;
+    color: black;
+    animation: none;
+`;
