@@ -2,11 +2,15 @@ import styled, { keyframes } from "styled-components";
 
 export const Hero = styled.div`
     margin: 0;
-    padding-top: 3em;
+
     padding-bottom: 3em;
+    &:first-of-type {
+        padding-top: 3em;
+    }
 `;
 
 export const Footer = styled(Hero)`
+    padding-top: 3em;
     background: linear-gradient(219.46deg, #110036 27.63%, #170059 100%),
         linear-gradient(219.46deg, #ffffff 27.63%, #19004e 100%),
         radial-gradient(100% 246.94% at 100% 100%, #ffffff 0%, #000353 100%),
@@ -36,7 +40,6 @@ export const HeaderHero = styled.div`
 export const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
-    max-width: 900px;
-    padding-left: 10px;
-    padding-right: 10px;
+    max-width: 1200px;
+    padding: 0rem 10px 0rem 10px;
 `;

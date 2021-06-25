@@ -1,5 +1,13 @@
 import styled, { keyframes } from "styled-components";
 
+const gradientList = [
+    "linear-gradient(19deg, #e8711d 0%, #cc1c7e 100%)",
+
+    "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)",
+
+    "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
+];
+
 const fadeUp = keyframes`
   from {
     opacity: 0%;
@@ -50,13 +58,14 @@ export const Heading1 = styled(Title)`
         position: relative;
         display: block;
         height: 4px;
-        left: 40px;
+        left: ${() => 10 + Math.floor(Math.random() * 70)}px;
         right: 0px;
         bottom: 10px;
         width: 100%;
         z-index: -1;
         background-color: #73e3ff;
-        background-image: linear-gradient(19deg, #e8711d 0%, #cc1c7e 100%);
+        background-image: ${() =>
+            gradientList[Math.floor(Math.random() * gradientList.length)]};
     }
 `;
 

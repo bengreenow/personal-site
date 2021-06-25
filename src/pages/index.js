@@ -6,14 +6,18 @@ import {
     faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import * as React from "react";
-import { Heading1, Heading2, Subtitle, Title } from "../components/Typography";
+import { Heading1, Subtitle, Title } from "../components/Typography";
 import { Footer, HeaderHero, Hero, Wrapper } from "../components/Hero";
 import SocialIcons from "../components/SocialIcons";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard, { ProjectCaption } from "../components/ProjectCard";
+import { Button } from "../components/Button";
+import { graphql } from "gatsby";
+import { Chip } from "../components/Chip";
 import { StaticImage } from "gatsby-plugin-image";
-import Button from "../components/Button";
-// data
+import { Column, TwoColumns } from "../components/TwoColumns";
+import { CORNER_RADIUS } from "../components/Constants";
 
+// data
 const socials = [
     {
         icon: faInstagram,
@@ -21,7 +25,7 @@ const socials = [
     },
     {
         icon: faLinkedin,
-        link: "https://www.linkedin.com/in/ben-greenow-3b004a180/",
+        link: "https://www.linkedin.com/in/bengreenow",
     },
     {
         icon: faEnvelope,
@@ -33,8 +37,9 @@ const socials = [
     },
 ];
 
-// markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+    console.log(data);
+    //markup
     return (
         <div>
             <header style={{ margin: 0 }}>
@@ -58,33 +63,63 @@ const IndexPage = () => {
                                 paddingLeft: "10px",
                                 paddingRight: "10px",
                                 maxWidth: "1140px",
-                                // width: "100%",
                             }}
                         >
                             <Title>Ben Greenow</Title>
                             <Subtitle>web developer</Subtitle>
-                            {/* // TODO add onclick scroll down */}
-                            <FontAwesomeIcon
-                                icon={faChevronDown}
-                                size="3x"
-                                style={{
-                                    margin: "auto",
-                                    display: "block",
-                                    color: "white",
-                                    animationName: "fadeUp",
-                                    animationDuration: "1s",
-                                    animationTimingFunction: "ease-out",
-                                    animationDelay: "0.7s",
-                                    animationFillMode: "backwards",
-                                }}
-                            />
+                            <a href="#projects">
+                                <FontAwesomeIcon
+                                    icon={faChevronDown}
+                                    size="3x"
+                                    style={{
+                                        margin: "auto",
+                                        display: "block",
+                                        color: "white",
+                                        animationName: "fadeUp",
+                                        animationDuration: "1s",
+                                        animationTimingFunction: "ease-out",
+                                        animationDelay: "0.7s",
+                                        animationFillMode: "backwards",
+                                    }}
+                                />
+                            </a>
                         </div>
                     </HeaderHero>
                 </div>
             </header>
+
             <Wrapper>
                 <Hero>
-                    <Heading1>Projects</Heading1>
+                    <Heading1>About Me</Heading1>
+                    <TwoColumns>
+                        <Column>
+                            <StaticImage
+                                src="../images/ben.jpg"
+                                alt="Ben Greenow"
+                                style={{
+                                    borderRadius: CORNER_RADIUS,
+                                    maxHeight: "50vh",
+                                    // minWidth: "30em",
+                                }}
+                            ></StaticImage>
+                        </Column>
+                        <Column>
+                            <p>
+                                Hey! I'm Ben, a web developer & designer from
+                                the north of England Lorem ipsum dolor, sit amet
+                                consectetur adipisicing elit. Animi rem illum,
+                                eum velit omnis laborum deserunt dignissimos
+                                nisi natus iste eveniet ipsa nulla mollitia
+                                reiciendis nesciunt cumque labore vel esse
+                                aspernatur hic, possimus repellendus! Vel
+                                nostrum ipsum consectetur eius eveniet?
+                            </p>
+                        </Column>
+                    </TwoColumns>
+                </Hero>
+                <Hero>
+                    <Heading1 id="projects">Projects</Heading1>
+
                     <div
                         style={{
                             display: "flex",
@@ -93,32 +128,44 @@ const IndexPage = () => {
                             flexBasis: "15em",
                         }}
                     >
-                        {[
-                            "p1",
-                            "p2",
-                            "p3",
-                            "p4",
-                            "p5",
-                            "p6",
-                            "p7",
-                            "p8",
-                            "p9",
-                        ].map((name) => {
+                        {data.allMdx.nodes.map((node) => {
                             return (
                                 <ProjectCard
-                                    title={name}
-                                    imageComponent={<StaticImage src="" />}
-                                    key={name}
+                                    key={node.id}
+                                    title={node.frontmatter.title}
+                                    imageComponent={
+                                        <StaticImage
+                                            src="../images/ben.jpg"
+                                            alt="ben"
+                                        ></StaticImage>
+                                    }
+                                    key={node.frontmatter.title}
                                 >
-                                    Hello World
+                                    <div>
+                                        {node.frontmatter.stack.map((x) => {
+                                            return (
+                                                <Chip
+                                                    key={
+                                                        node.frontmatter.id + x
+                                                    }
+                                                >
+                                                    {x}
+                                                </Chip>
+                                            );
+                                        })}
+                                    </div>
+                                    <ProjectCaption>
+                                        {node.frontmatter.description}
+                                    </ProjectCaption>
+                                    <Button href={node.frontmatter.slug}>
+                                        Read More
+                                    </Button>
                                 </ProjectCard>
                             );
                         })}
                     </div>
-                    <Button></Button>
                 </Hero>
             </Wrapper>
-
             <Footer>
                 <Wrapper>
                     <SocialIcons socials={socials}></SocialIcons>
@@ -127,5 +174,25 @@ const IndexPage = () => {
         </div>
     );
 };
+
+export const query = graphql`
+    {
+        allMdx(
+            sort: { fields: frontmatter___date, order: DESC }
+            filter: { frontmatter: { published: { eq: true } } }
+        ) {
+            nodes {
+                frontmatter {
+                    title
+                    stack
+                    description
+                    date
+                    slug
+                }
+                id
+            }
+        }
+    }
+`;
 
 export default IndexPage;

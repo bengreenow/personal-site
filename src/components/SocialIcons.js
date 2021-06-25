@@ -7,7 +7,7 @@ export default function SocialIcons(props) {
         <SocialList>
             {props.socials.map((social) => {
                 return (
-                    <SocialListItem>
+                    <SocialListItem key={social.link}>
                         <a href={social.link} target="_blank">
                             <FontAwesomeIcon
                                 icon={social.icon}
