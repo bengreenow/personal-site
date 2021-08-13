@@ -1,3 +1,5 @@
+import { Link } from "gatsby";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const gradientList = [
@@ -84,4 +86,16 @@ export const Heading2 = styled(Title)`
     font-size: 2.4rem;
     color: black;
     animation: none;
+`;
+
+export const StyledLink = styled((props) => <Link {...props} />)`
+    font-family: "Questrial", sans-serif;
+    color: white;
+    text-decoration: none;
+    &:active {
+    }
+    &:visited {
+        color: white;
+        text-decoration: none;
+    }
 `;

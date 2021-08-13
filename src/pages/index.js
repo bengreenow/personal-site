@@ -133,12 +133,6 @@ const IndexPage = ({ data }) => {
                                 <ProjectCard
                                     key={node.id}
                                     title={node.frontmatter.title}
-                                    imageComponent={
-                                        <StaticImage
-                                            src="../images/ben.jpg"
-                                            alt="ben"
-                                        ></StaticImage>
-                                    }
                                     key={node.frontmatter.title}
                                 >
                                     <div>

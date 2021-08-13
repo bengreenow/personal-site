@@ -4,7 +4,16 @@ module.exports = {
     },
     plugins: [
         "gatsby-plugin-styled-components",
-        "gatsby-plugin-mdx",
+        {
+            resolve: "gatsby-plugin-mdx",
+            options: {
+                defaultLayouts: {
+                    pages: require.resolve(
+                        "./src/components/default-page-layout.js"
+                    ),
+                },
+            },
+        },
         {
             resolve: "gatsby-source-filesystem",
             options: {
