@@ -22,6 +22,7 @@ const fadeUp = keyframes`
 }`;
 
 export const Title = styled.h1`
+    width: 100%;
     display: inline-block;
     font-family: "Questrial", sans-serif;
     font-size: 10em;
@@ -43,7 +44,9 @@ export const Subtitle = styled.h2`
     color: white;
     font-size: 2rem;
     line-height: 0.5;
-    margin: 0;
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
+
     animation-name: ${fadeUp};
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -52,6 +55,8 @@ export const Subtitle = styled.h2`
 `;
 
 export const Heading1 = styled(Title)`
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
     font-size: 5rem;
     color: black;
     animation: none;

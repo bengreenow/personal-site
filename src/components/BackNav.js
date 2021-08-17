@@ -14,6 +14,7 @@ const BackgroundBox = styled.div`
     padding: 0.8em 0 0.8em 0;
     font-family: "Questrial", sans-serif;
     color: white;
+    position: sticky;
 `;
 
 export default function BackNav() {

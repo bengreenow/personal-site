@@ -1,14 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-    faInstagram,
-    faLinkedin,
-    faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import * as React from "react";
 import { Heading1, Subtitle, Title } from "../components/Typography";
-import { Footer, HeaderHero, Hero, Wrapper } from "../components/Hero";
-import SocialIcons from "../components/SocialIcons";
+import { HeaderHero, Hero, Wrapper } from "../components/Hero";
+
 import ProjectCard, { ProjectCaption } from "../components/ProjectCard";
 import { Button } from "../components/Button";
 import { graphql } from "gatsby";
@@ -16,26 +11,19 @@ import { Chip } from "../components/Chip";
 import { StaticImage } from "gatsby-plugin-image";
 import { Column, TwoColumns } from "../components/TwoColumns";
 import { CORNER_RADIUS } from "../components/Constants";
+import styled from "styled-components";
+import Footer from "../components/Footer";
 
-// data
-const socials = [
-    {
-        icon: faInstagram,
-        link: "https://www.instagram.com/bengreenow",
-    },
-    {
-        icon: faLinkedin,
-        link: "https://www.linkedin.com/in/bengreenow",
-    },
-    {
-        icon: faEnvelope,
-        link: "mailto:benjamin.greenow@gmail.com?subject=Hello There!",
-    },
-    {
-        icon: faGithub,
-        link: "https://github.com/bengreenow",
-    },
-];
+const MicroInteraction = styled.span`
+    transition: all 0.5s ease-in-out;
+    position: absloute;
+    display: inline-block;
+
+    &:hover {
+        transform: scale(1.5) rotate(7deg);
+        color: #0070ff;
+    }
+`;
 
 const IndexPage = ({ data }) => {
     console.log(data);
@@ -66,7 +54,7 @@ const IndexPage = ({ data }) => {
                             }}
                         >
                             <Title>Ben Greenow</Title>
-                            <Subtitle>web developer</Subtitle>
+                            <Subtitle>software engineer</Subtitle>
                             <a href="#projects">
                                 <FontAwesomeIcon
                                     icon={faChevronDown}
@@ -93,26 +81,39 @@ const IndexPage = ({ data }) => {
                     <Heading1>About Me</Heading1>
                     <TwoColumns>
                         <Column>
-                            <StaticImage
-                                src="../images/ben.jpg"
-                                alt="Ben Greenow"
-                                style={{
-                                    borderRadius: CORNER_RADIUS,
-                                    maxHeight: "50vh",
-                                    // minWidth: "30em",
-                                }}
-                            ></StaticImage>
+                            <TwoColumns>
+                                <Column>
+                                    <StaticImage
+                                        src="../images/ben.jpg"
+                                        alt="Ben Greenow"
+                                        style={{
+                                            borderRadius: CORNER_RADIUS,
+                                            maxHeight: "50vh",
+                                            // aspectRatio: "9 / 16",
+                                            // minHeight: "300px",
+                                            // minWidth: "30em",
+                                        }}
+                                    ></StaticImage>
+                                </Column>
+                            </TwoColumns>
                         </Column>
                         <Column>
                             <p>
-                                Hey! I'm Ben, a web developer & designer from
-                                the north of England Lorem ipsum dolor, sit amet
-                                consectetur adipisicing elit. Animi rem illum,
-                                eum velit omnis laborum deserunt dignissimos
-                                nisi natus iste eveniet ipsa nulla mollitia
-                                reiciendis nesciunt cumque labore vel esse
-                                aspernatur hic, possimus repellendus! Vel
-                                nostrum ipsum consectetur eius eveniet?
+                                Hey! I'm Ben, a creative web developer &
+                                designer from the north of England. I recently
+                                acheived a 1<sup>st</sup>
+                                &nbsp;class honours degree in Computer Science
+                                from Newcastle University, and am eager to join
+                                the workforce!
+                                <br />I love making things with React &
+                                JavaScript, and using CSS to create detailed
+                                <MicroInteraction>
+                                    &nbsp;microinteractions
+                                </MicroInteraction>
+                                , however I am also familiar with PHP and
+                                backend technologies like Django. <br />
+                                Below are some of my favourite projects I have
+                                completed:
                             </p>
                         </Column>
                     </TwoColumns>
@@ -160,11 +161,7 @@ const IndexPage = ({ data }) => {
                     </div>
                 </Hero>
             </Wrapper>
-            <Footer>
-                <Wrapper>
-                    <SocialIcons socials={socials}></SocialIcons>
-                </Wrapper>
-            </Footer>
+            <Footer></Footer>
         </div>
     );
 };

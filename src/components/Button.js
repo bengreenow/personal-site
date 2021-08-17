@@ -14,7 +14,7 @@ export const Button = styled.a`
     transition: all 0.3s ease-out;
 
     display: inline-block;
-    margin: 0.2rem;
+    ${"" /* margin: 0.2rem; */}
     padding: 0.8rem;
     font-size: 17px;
     border-radius: ${CORNER_RADIUS};
