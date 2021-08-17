@@ -1,4 +1,14 @@
+import { Link } from "gatsby";
+import React from "react";
 import styled, { keyframes } from "styled-components";
+
+const gradientList = [
+    "linear-gradient(19deg, #e8711d 0%, #cc1c7e 100%)",
+
+    "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)",
+
+    "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
+];
 
 const fadeUp = keyframes`
   from {
@@ -12,13 +22,13 @@ const fadeUp = keyframes`
 }`;
 
 export const Title = styled.h1`
+    width: 100%;
     display: inline-block;
     font-family: "Questrial", sans-serif;
     font-size: 10em;
     font-weight: 100;
     color: white;
     margin: 0;
-    font-family: $display-font-family;
     animation-name: ${fadeUp};
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -34,7 +44,9 @@ export const Subtitle = styled.h2`
     color: white;
     font-size: 2rem;
     line-height: 0.5;
-    margin: 0;
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
+
     animation-name: ${fadeUp};
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -43,6 +55,8 @@ export const Subtitle = styled.h2`
 `;
 
 export const Heading1 = styled(Title)`
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
     font-size: 5rem;
     color: black;
     animation: none;
@@ -51,13 +65,14 @@ export const Heading1 = styled(Title)`
         position: relative;
         display: block;
         height: 4px;
-        left: 40px;
+        left: ${() => 10 + Math.floor(Math.random() * 70)}px;
         right: 0px;
         bottom: 10px;
         width: 100%;
         z-index: -1;
         background-color: #73e3ff;
-        background-image: linear-gradient(19deg, #e8711d 0%, #cc1c7e 100%);
+        background-image: ${() =>
+            gradientList[Math.floor(Math.random() * gradientList.length)]};
     }
 `;
 
@@ -70,4 +85,22 @@ export const SocialList = styled.ul`
     list-style-type: none;
     margin: 0;
     padding: 0;
+`;
+
+export const Heading2 = styled(Title)`
+    font-size: 2.4rem;
+    color: black;
+    animation: none;
+`;
+
+export const StyledLink = styled((props) => <Link {...props} />)`
+    font-family: "Questrial", sans-serif;
+    color: white;
+    text-decoration: none;
+    &:active {
+    }
+    &:visited {
+        color: white;
+        text-decoration: none;
+    }
 `;
