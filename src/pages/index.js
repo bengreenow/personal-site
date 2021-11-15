@@ -107,8 +107,7 @@ const IndexPage = ({ data }) => {
                                 designer from the north of England. I recently
                                 acheived a 1<sup>st</sup>
                                 &nbsp;class honours degree in Computer Science
-                                from Newcastle University, and am eager to join
-                                the workforce!
+                                from Newcastle University.
                                 <br />I love making things with React &
                                 JavaScript, and using CSS to create detailed
                                 <MicroInteraction>
