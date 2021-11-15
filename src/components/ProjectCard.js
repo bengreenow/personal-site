@@ -57,7 +57,6 @@ export default function ProjectCard(props) {
 }
 
 export const ProjectCaption = styled.p`
-    font-family: "Old Standard TT", serif;
     white-space: normal;
     font-size: 1.3rem;
     margin-top: 0.4rem;

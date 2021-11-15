@@ -25,7 +25,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
-                fonts: [`Questrial`, `Old Standard TT`],
+                fonts: [`Questrial`],
                 display: "swap",
             },
         },
@@ -33,5 +33,6 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-fontawesome-css`,
+        `gatsby-plugin-react-helmet`,
     ],
 };

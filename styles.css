@@ -6,7 +6,8 @@ body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    font-family: "Old Standard TT", serif;
+    font-family: "Roboto", sans-serif;
+
 }
 
 @keyframes fadeUp {

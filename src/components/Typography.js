@@ -40,7 +40,6 @@ export const Title = styled.h1`
     }
 `;
 export const Subtitle = styled.h2`
-    font-family: "Old Standard TT", serif;
     color: white;
     font-size: 2rem;
     line-height: 0.5;

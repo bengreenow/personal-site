@@ -13,6 +13,7 @@ import { Column, TwoColumns } from "../components/TwoColumns";
 import { CORNER_RADIUS } from "../components/Constants";
 import styled from "styled-components";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet";
 
 const MicroInteraction = styled.span`
     transition: all 0.5s ease-in-out;
@@ -30,6 +31,9 @@ const IndexPage = ({ data }) => {
     //markup
     return (
         <div>
+            <Helmet>
+                <title>Ben Greenow</title>
+            </Helmet>
             <header style={{ margin: 0 }}>
                 <div style={{ display: "grid" }}>
                     <div
