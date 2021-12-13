@@ -2,232 +2,56 @@
 slug: "/projects/johngreenow"
 date: "2021-05-23"
 title: "John Greenow: Personal Website"
-published: false
-stack: [11ty, Tailwind CSS]
+published: true
+stack: [11ty, Tailwind CSS, alpine.js]
 description: "A personal website for Pastor John Greenow."
 ---
 
 # John Greenow's Personal Website
 
-## Heading 2
+John Greenow is a Pastor and Emotional intelligence coach. He also happens to be my dad. So, knowing his son was a developer, naturally he approached me when he needed to make a website.
 
-This project was very fun because
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quas cum repellat porro vitae nobis quae fugit doloremque alias, quos magni voluptate commodi quisquam odit neque, excepturi est obcaecati aperiam eligendi nostrum. Doloremque, harum debitis rerum atque, id quod enim molestiae rem, vel sint libero facere iusto tempore facilis. Accusamus deleniti delectus alias laudantium recusandae dicta, est placeat expedita quisquam eos iusto exercitationem ipsam sit consequuntur necessitatibus quidem iure esse. Fugit cumque eos aspernatur odio enim, sit a, blanditiis totam tenetur quas rerum labore perferendis consectetur neque ea hic magnam, cupiditate nulla. Suscipit sapiente eaque quam accusamus vero ducimus obcaecati.
+## Design
 
-# h1 Heading 8-)
+He needed a simple website, nothing too flashy, essentially an online buisness card. A place he could send prospective clients and a site he could use to grow his personal brand.
 
-## h2 Heading
+We discussed the design of the site in abstract terms, and my main takeaway for the art direction of the site was "Classy, Comfortable, Inviting".
+I knew I wanted a dark theme, to me, a darker tone communicated luxury and elegance, so I decided to make the background black. As for the fonts, I chose a pairing of two san-serif fonts.
 
-### h3 Heading
+Work Sans was to be the main "Display" font - at a heavy weight and large this font is super inviting.
+For my body copy font I went with a classic - Roboto. Strong, dependable and most importantly super readable at small sizes.
 
-#### h4 Heading
+## Technologies
 
-##### h5 Heading
+For building the site, I turned to the JS powered static site generator [11ty](https://www.11ty.dev/) for a few reasons.
 
-###### h6 Heading
+### Simple
 
-## Horizontal Rules
+11ty, at it's core, just creates HTML files. Not to brag but - I know HTML. Even though it would be my first time using a SSG, knowing it was simply HTML with extra steps gave me a big confidence boost.
 
----
+### SEO
 
----
+It's an SSG! SEO is basically baked in! When making a SPA (which in this case is hilariously overkill) you'd have to worry about SEO by mixing and matching server side rendered stuff with your client side JS. Here, you don't. 
+Google can crawl to it's hearts content. Helpful when John is trying to get his name out there.
 
----
+### JavaScript
 
-## Typographic replacements
+It runs on JS. I know JS. Simple as.
 
-Enable typographer option to see result.
+### Other Bits
 
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+For styling, if you know me, it's obvious I'm going with [Tailwind CSS](https://tailwindcss.com). I've come to love it a lot. Doing breakpoints and hover states has never been easier.
+Also, as we'll probably have a little bit of front end logic that CSS can't handle, I'm using [Alpine.js](https://alpinejs.dev/), another super simple bit of JS that makes my life a little easier.
 
-test.. test... test..... test?..... test!....
+## Hosting
 
-!!!!!! ???? ,, -- ---
+Okay, I'll admit it. I'm a front end guy. If I can avoid backend as much as possible I will. So, I went with Netlify here.
 
-"Smartypants, double quotes" and 'single quotes'
+Netlify is this amazing Deployment as a Service, where all you do is plug your Git repo up to it and you're up and running.
+They also offer a super simple barebones CMS that links into the git repo seamlessly.
 
-## Emphasis
+Different branches on your repo can correspond to different subdomains too, which I used to create a staging area to show my progress to John during development.
 
-**This is bold text**
+Overall I'd say it came out pretty well.
 
-**This is bold text**
-
-_This is italic text_
-
-_This is italic text_
-
-~~Strikethrough~~
-
-## Blockquotes
-
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
-
-## Lists
-
-Unordered
-
--   Create a list by starting a line with `+`, `-`, or `*`
--   Sub-lists are made by indenting 2 spaces:
-    -   Marker character change forces new list start:
-        -   Ac tristique libero volutpat at
-        *   Facilisis in pretium nisl aliquet
-        -   Nulla volutpat aliquam velit
--   Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-4. You can use sequential numbers...
-5. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-## Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
-Syntax highlighting
-
-```js
-var foo = function (bar) {
-    return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Tables
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-Right aligned columns
-
-| Option |                                                               Description |
-| -----: | ------------------------------------------------------------------------: |
-|   data | path to data files to supply the data that will be passed into templates. |
-| engine |    engine to be used for processing templates. Handlebars is the default. |
-|    ext |                                      extension to be used for dest files. |
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg "The Dojocat"
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
--   19^th^
--   H~2~O
-
-++Inserted text++
-
-==Marked text==
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-: Definition 1
-with lazy continuation.
-
-Term 2 with _inline markup_
-
-: Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-_Compact style:_
-
-Term 1
-~ Definition 1
-
-Term 2
-~ Definition 2a
-~ Definition 2b
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-\*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-_here be dragons_
-:::
+You can check it out [here](https://johngreenow.com).

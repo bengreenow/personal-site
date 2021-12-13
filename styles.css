@@ -41,9 +41,9 @@ body {
 
 p {
     font-family: "Roboto", sans-serif;
-    white-space: normal;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
+    /* white-space: normal; */
+    font-size: 1.1rem;
+    /* line-height: 1.7rem; */
     font-weight: 300;
     margin-top: 0.4rem;
     margin-bottom: 0.6rem;
